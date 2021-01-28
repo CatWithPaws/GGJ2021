@@ -30,7 +30,7 @@ public class PlayDialogue : MonoBehaviour
 	{
 		
 		string jsonText = (Resources.Load<TextAsset>("Dialogues/dialog" + dialogueName) as TextAsset).text;
-		print(jsonText);
+		dialogueText.text = "";
 		data _Data = JsonUtility.FromJson<data>(jsonText);
 		dialogueQueue = _Data.text;
 		print(dialogueQueue[0]);
@@ -71,7 +71,7 @@ public class PlayDialogue : MonoBehaviour
 								yield return null;
 							}
 						}
-						yield return new WaitForSeconds(0.05f);
+						yield return new WaitForSeconds(0.04f);
 					}
 				}
 				yield return null;

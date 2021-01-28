@@ -8,6 +8,8 @@ public class LoadDialog : MonoBehaviour
 {
 	[SerializeField] Transform dialogPosition;
 	[SerializeField] RectTransform dialogRectTransform;
+
+	bool isPlayedOnce = false;
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +22,9 @@ public class LoadDialog : MonoBehaviour
 	{
 		print("zzzzzz");
 		PlayDialogue.Instance.gameObject.SetActive(true);
-		PlayDialogue.Instance.StartDialog("001");
+		if(!isPlayedOnce) PlayDialogue.Instance.StartDialog("001");
+		else PlayDialogue.Instance.StartDialog("002");
+		isPlayedOnce = true;
+
 	}
 }
