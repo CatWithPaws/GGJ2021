@@ -9,7 +9,7 @@ public class CheckToDo : MonoBehaviour
 		if(collision.gameObject.layer == LayerMask.NameToLayer("Interactive"))
 		{
 			print("asdasd");
-			if (Input.GetKey(KeyCode.E	))
+			if (Input.GetKey(KeyCode.E))
 			{
 				collision.gameObject.SendMessage("Do");
 			}

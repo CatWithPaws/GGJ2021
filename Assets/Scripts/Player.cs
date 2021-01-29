@@ -22,15 +22,17 @@ public class Player : MonoBehaviour
 	private Rigidbody2D playerRB;
 	private Animator playerAnim;
 
+	public static Player Instance;
 
 	[SerializeField] private float speed;
 	[SerializeField] private Vector2 velocity;
 
-
+	public bool isInDialog = false;
 	private void Awake()
 	{
 		playerAnim = GetComponent<Animator>();
 		playerRB = GetComponent<Rigidbody2D>();
+		Instance = this;
 	}
 
 	private void Start()
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
 
 	private void Update()
 	{
+		if (isInDialog) return;
 		CheckInput();
 
 
