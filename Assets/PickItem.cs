@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickItem : MonoBehaviour
 {
-	int ID = 0;
+	[SerializeField] int ID = 0;
 
 	public void Do()
 	{
