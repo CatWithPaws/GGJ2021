@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
 
 	bool[] ingridientInventory = new bool[5];
 
+	bool isIngridientQuestCompleted => ingridientInventory[0] && ingridientInventory[1] && ingridientInventory[2] && ingridientInventory[3] && ingridientInventory[4];
+
 	Masks playerMask = Masks.Monkey;
 
 	public bool isInDialog = false;
@@ -41,15 +43,13 @@ public class Player : MonoBehaviour
 		playerRB = GetComponent<Rigidbody2D>();
 		Instance = this;
 	}
-
-
 	
-	void PickIngridient(int ID)
+	public void PickIngridient(int ID)
 	{
 		ingridientInventory[ID] = true;
 	}
 	
-	void CompleteWizardQuest()
+	public void CompleteWizardQuest()
 	{
 		ingridientInventory = new bool[5];
 	}
