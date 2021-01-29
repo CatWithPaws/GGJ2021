@@ -8,13 +8,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+
+
 	public enum PlayerState
 	{
 		Idle,Walk
 	}
 	public enum Masks
 	{
-
+		Owl,Monkey,Tiger,None
 	}
 	private const string HORIZONTAL = "Horizontal";
 	private const string VERTICAL = "Vertical";
@@ -27,12 +29,29 @@ public class Player : MonoBehaviour
 	[SerializeField] private float speed;
 	[SerializeField] private Vector2 velocity;
 
+	bool[] ingridientInventory = new bool[5];
+
+	Masks playerMask = Masks.Monkey;
+
 	public bool isInDialog = false;
+	private PlayerState playerState = PlayerState.Idle;
 	private void Awake()
 	{
 		playerAnim = GetComponent<Animator>();
 		playerRB = GetComponent<Rigidbody2D>();
 		Instance = this;
+	}
+
+
+	
+	void PickIngridient(int ID)
+	{
+		ingridientInventory[ID] = true;
+	}
+	
+	void CompleteWizardQuest()
+	{
+		ingridientInventory = new bool[5];
 	}
 
 	private void Start()
@@ -44,9 +63,58 @@ public class Player : MonoBehaviour
 	{
 		if (isInDialog) return;
 		CheckInput();
+		string animationName = "";
+		if (velocity.x != 0)
+		{
+			playerState = PlayerState.Walk;
+			animationName += "Move";
+		}
+		else
+		{
+			playerState = PlayerState.Idle;
+			animationName += "Idle";
+		}
+		switch (playerMask)
+		{
+			case Masks.Tiger:
+				animationName += "Tiger";
+				break;
+			case Masks.Monkey:
+				animationName += "Monkey";
+				break;
+			case Masks.Owl:
+				animationName += "Owl";
+				break;
+			case Masks.None:
+				animationName += "NoneMask";
+				break;
+		}
+
+		if(playerState != PlayerState.Idle)
+		{
+			if (transform.localScale.x > 0)
+			{
+				animationName += "Right";
+			}
+			else if (transform.localScale.x < 0)
+			{
+				animationName += "Left";
+			}
+		}
+
+		if(velocity.y > 0)
+		{
+			animationName += "Up";
+		}
+		else if(velocity.y <= 0)
+		{
+			animationName += "Down";
+		}
+
+		print(animationName);
 
 
-
+		playerAnim.Play(animationName);
 		playerRB.velocity = velocity;
 	}
 
@@ -54,6 +122,7 @@ public class Player : MonoBehaviour
 	{
 		velocity.x = Input.GetAxisRaw(HORIZONTAL);
 		velocity.y = Input.GetAxisRaw(VERTICAL);
+		
 		velocity *= speed;
 	}
 

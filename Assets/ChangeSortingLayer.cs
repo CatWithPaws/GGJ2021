@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChangeSortingLayer : MonoBehaviour
 {
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if(collision.gameObject.layer == LayerMask.NameToLayer("NeedToCnahngeSortingLayer"))
 		{
-			collision.gameObject.transform.parent.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
+			transform.parent.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -1;
 		}
 	}
 
@@ -16,7 +16,7 @@ public class ChangeSortingLayer : MonoBehaviour
 	{
 		if(collision.gameObject.layer == LayerMask.NameToLayer("NeedToCnahngeSortingLayer"))
 		{
-			collision.gameObject.transform.parent.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+			transform.parent.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
 		}
 	}
 }

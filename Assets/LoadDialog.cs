@@ -16,7 +16,7 @@ public class LoadDialog : MonoBehaviour
 		print("zzzzzz");
 		PlayDialogue.Instance.gameObject.SetActive(true);
 		if(!isPlayedOnce) PlayDialogue.Instance.StartDialog("001",dialogPosition);
-		else PlayDialogue.Instance.StartDialog("002",transform);
+		else PlayDialogue.Instance.StartDialog("002", dialogPosition);
 		isPlayedOnce = true;
 
 	}
