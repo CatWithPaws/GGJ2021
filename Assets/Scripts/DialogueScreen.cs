@@ -31,10 +31,13 @@ public class DialogueScreen : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
 
+        text.text = textD;
+
         while (!Input.GetKeyDown(KeyCode.E))
         {
             yield return null;
         }
+        print("Dialogue Finished");
 
         isFinished = true;
     }
