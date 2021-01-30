@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027659655, y: 0.5159304}
+  m_Offset: {x: 0.17775536, y: 1.0787895}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.6609006, y: 4.577994}
+  m_Size: {x: 5.084896, y: 4.427898}
   m_EdgeRadius: 0
 --- !u!1 &8011678914697300561
 GameObject:
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 3776466331151053347}
   - component: {fileID: 4362742947561144261}
   m_Layer: 0
-  m_Name: IMG_2799_0 (9)
+  m_Name: Statue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.40566683, y: -1.9730175}
+  m_Offset: {x: 0.067952156, y: -2.2825894}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2075396, y: 1.6947017}
+  m_Size: {x: 3.3088818, y: 2.3138456}
   m_EdgeRadius: 0
 --- !u!114 &4362742947561144261
 MonoBehaviour:
@@ -229,4 +229,4 @@ MonoBehaviour:
   - {x: -1.6326618, y: -2.3829174, z: -0.00000011920929}
   m_ShapePathHash: -750769211
   m_Mesh: {fileID: 0}
-  m_InstanceId: -81624
+  m_InstanceId: 75216
