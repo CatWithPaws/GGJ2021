@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 		var originalScale = transform.localScale;
 		while (true)
 		{
-			if (Mathf.Abs(_rb.velocity.x) > 0.001f) transform.localScale = new Vector2(originalScale.x * (_rb.velocity.x > 0? 1: -1), originalScale.y);
+			if (Mathf.Abs(_rb.velocity.x) > 0.001f) transform.localScale = new Vector2(Mathf.Abs(originalScale.x) * (_rb.velocity.x > 0? 1: -1), originalScale.y);
 			yield return null;
 		}
 
