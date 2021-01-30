@@ -16,6 +16,7 @@ public class GlobalVars : MonoBehaviour
 
 	public bool needToFadeOut;
 
+	public AudioSource OneShootEffectAudio,OneShootMusic,BackroundMusic;
 
 	private void Start()
 	{
@@ -72,6 +73,22 @@ public class GlobalVars : MonoBehaviour
 	private void FadeOut(Scene scene,LoadSceneMode mode)
 	{
 		StartCoroutine(FadeOUT());
+	}
+
+
+	public void PlayOneShotEffect(AudioClip clip)
+	{
+		OneShootEffectAudio.clip = clip;
+	}
+
+	public void PlayOneShotMusic(AudioClip clip)
+	{
+		OneShootMusic.clip = clip;
+	}
+
+	public void PlayBackgroundMusic(AudioClip clip)
+	{
+		BackroundMusic.clip = clip;
 	}
 
 }
