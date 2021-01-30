@@ -6,13 +6,15 @@ using UnityEngine.UI;
 
 public class GlobalVars : MonoBehaviour
 {
-	public static GlobalVars Instance;
+	public static GlobalVars i;
 
 	public Image[] QuestItems;
 
+	
+	
 	private void Awake()
 	{
-		Instance = this;
+		i = this;
 		DontDestroyOnLoad(gameObject);
 		
 	}

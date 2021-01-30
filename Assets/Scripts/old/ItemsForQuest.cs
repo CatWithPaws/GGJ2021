@@ -10,7 +10,7 @@ public class ItemsForQuest : MonoBehaviour
 	private void Awake()
 	{
 		
-		GlobalVars.Instance.QuestItems = Items;
-		GlobalVars.Instance.HideItems();
+		GlobalVars.i.QuestItems = Items;
+		GlobalVars.i.HideItems();
 	}
 }

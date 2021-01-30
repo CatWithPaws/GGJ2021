@@ -8,8 +8,8 @@ public class PickItem : MonoBehaviour
 
 	public void Do()
 	{
-		GlobalVars.Instance.PickIngridient(ID);
-		Player.Instance.PickIngridient(ID);
+		GlobalVars.i.PickIngridient(ID);
+		//Player.Instance.PickIngridient(ID);
 		gameObject.SetActive(false);
 	}
 }

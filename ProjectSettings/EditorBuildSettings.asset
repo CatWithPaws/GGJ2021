@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/StartScene.unity
     guid: 1b397797a2113054a89e547bcdf26646
   - enabled: 1
+    path: Assets/_Scenes/InGame/House.unity
+    guid: 95d6881e56dde66429d24236abaa64ff
+  - enabled: 1
+    path: Assets/_Scenes/InGame/Fork.unity
+    guid: 2a08936e34b34ae46bea7e064b0f2aae
+  - enabled: 0
     path: Assets/_Scenes/Test.unity
     guid: ec61116090d661547bc4ee84deed4be6
   m_configObjects: {}

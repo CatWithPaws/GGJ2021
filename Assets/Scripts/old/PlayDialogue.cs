@@ -39,7 +39,7 @@ public class PlayDialogue : MonoBehaviour
 
 	public IEnumerator Dialogue(string dialogueName, Transform target)
 	{
-		Player.Instance.isInDialog = true;
+		//Player.Instance.isInDialog = true;
 		Vector3 dialogViewPortPosition = Camera.main.WorldToViewportPoint(target.position);
 
 		dialogRectTransform.position = Camera.main.ViewportToScreenPoint(dialogViewPortPosition);
@@ -102,7 +102,7 @@ public class PlayDialogue : MonoBehaviour
 
 		gameObject.SetActive(false);
 		isInDialog = false;
-		Player.Instance.isInDialog = false;
+		//Player.Instance.isInDialog = false;
 	}
 
 }
