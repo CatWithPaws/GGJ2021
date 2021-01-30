@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class DialogueInvoker : MonoBehaviour
 {
-    [SerializeField]private Dialogue[] dialogues;
+    [SerializeField] private Dialogue[] dialogues;
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.collider && other.collider.CompareTag("Players") && Input.GetKeyDown(KeyCode.E))
+        if (other.CompareTag("Players") && Input.GetKeyDown(KeyCode.E))
         {
             foreach (var d in dialogues)
             {
                 DialogueManager.AddDialogue(d);
             }
             Destroy(gameObject);
-            
         }
     }
 }

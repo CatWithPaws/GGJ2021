@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
                                                + Vector3.up * currentDialogue.yOffset);
                     yield return null;
                 }
-                Destroy(dialogueScreen);
+                Destroy(dialogueScreen.gameObject);
             }
             yield return null;
         }
