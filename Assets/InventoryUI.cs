@@ -8,11 +8,11 @@ public class InventoryUI : MonoBehaviour
     public List<GameObject> itemList = new List<GameObject>();
     public Transform Items;
 
-    private float offset = 100;
+    private float offset = 120;
     void Awake()
     {
         WorldBroadcast.ItemCollected.Subscribe(OnItemCollected);
-        WorldBroadcast.ItemCollected.Subscribe(OnItemCollected);
+        WorldBroadcast.CollectionGameEnded.Subscribe(OnCollectionGameEnded);
     }
 
     private void OnDestroy()
@@ -25,9 +25,18 @@ public class InventoryUI : MonoBehaviour
         Add(sprite);
     }
 
+    private void OnCollectionGameEnded(GameObject o)
+    {
+        for (int i = 0; i < Items.childCount; i++)
+        {
+            Destroy(Items.GetChild(i).gameObject);
+        }
+        itemList.Clear();
+    }
+
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Y)) OnCollectionGameEnded(gameObject);
         var locPos = Items.transform.localPosition;
         var newPos = (itemList.Count - 2.8f) * offset / 2 * Vector3.left;
         Items.transform.localPosition += (newPos - locPos) / 20f;

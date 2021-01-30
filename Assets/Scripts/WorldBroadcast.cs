@@ -7,6 +7,6 @@
 
         public static readonly GameEvent<MaskType> MaskChanged = new GameEvent<MaskType>();
         public static readonly GameEvent<Sprite> ItemCollected = new GameEvent<Sprite>();
-        public static readonly GameEvent<Sprite> CollectionGameEnded = new GameEvent<Sprite>();
+        public static readonly GameEvent<GameObject> CollectionGameEnded = new GameEvent<GameObject>();
     }
 
