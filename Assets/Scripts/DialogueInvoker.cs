@@ -1,18 +1,35 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueInvoker : MonoBehaviour
+public class DialogueInvoker : CanBeTriggeredByPlayer
 {
-    [SerializeField] private Dialogue[] dialogues;
+    [SerializeField] public int stage;
+    [SerializeField] private List<Dialogues> stageDialogues;
 
-    private void OnTriggerStay2D(Collider2D other)
+
+     private void Start()
+     {
+         var cc = gameObject.AddComponent<CircleCollider2D>();
+         cc.radius = 1.2f;
+         cc.isTrigger = true;
+     }
+
+     private void Update()
     {
-        if (other.CompareTag("Players") && Input.GetKeyDown(KeyCode.E))
+        if (isPlayer && Input.GetKeyDown(KeyCode.E))
         {
-            foreach (var d in dialogues)
+            foreach (var d in stageDialogues[stage].d)
             {
                 DialogueManager.AddDialogue(d);
             }
-            Destroy(gameObject);
+            isPlayer = false;
         }
     }
+}
+
+[Serializable]
+public class Dialogues
+{
+    public Dialogue[] d;
 }

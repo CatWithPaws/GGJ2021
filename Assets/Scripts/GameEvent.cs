@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AndromedaCore.LevelManagement
-{
     public class GameEvent <T>
     {
         private readonly List<Action<T>> _callbacks = new List<Action<T>>();
@@ -22,4 +20,3 @@ namespace AndromedaCore.LevelManagement
             foreach (Action<T> callback in _callbacks) callback?.Invoke(unit);
         }
     }
-}

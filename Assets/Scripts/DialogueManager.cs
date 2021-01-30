@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     private static Queue<Dialogue> _queue;
 
     public GameObject dialogueScreenPrefab;
+
+    public static bool isDialogue;
     
     void Start()
     {
@@ -21,9 +23,10 @@ public class DialogueManager : MonoBehaviour
         {
             if (_queue.Count > 0)
             {
+                isDialogue = true;
                 var currentDialogue = _queue.Dequeue();
                 var dialogueScreen = Instantiate(dialogueScreenPrefab).GetComponent<DialogueScreen>();
-                dialogueScreen.transform.parent = transform;
+                dialogueScreen.transform.SetParent(transform);
                 dialogueScreen.dialogue = currentDialogue;
                 var cam = Camera.main;
                 while (!dialogueScreen.isFinished)
@@ -35,6 +38,7 @@ public class DialogueManager : MonoBehaviour
                 }
                 Destroy(dialogueScreen.gameObject);
             }
+            isDialogue = false;
             yield return null;
         }
     }

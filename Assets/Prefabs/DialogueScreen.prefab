@@ -147,7 +147,7 @@ MonoBehaviour:
   dialogue:
     obj: {fileID: 0}
     message: 
-    yOffset: 
+    yOffset: 0
   text: {fileID: 5418701871376992265}
   isFinished: 0
 --- !u!1 &5418701871064266030
@@ -176,7 +176,7 @@ RectTransform:
   m_GameObject: {fileID: 5418701871064266030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 5418701870278085635}
   - {fileID: 5418701871376992264}
