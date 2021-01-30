@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 				var timeSpeed = speed * Time.deltaTime;
 				_rb.velocity = new Vector2(CheckInputX() * timeSpeed, CheckInputY() * timeSpeed);
 			}
-			yield return null;
+			yield return new WaitForFixedUpdate();
 		}
 
 	}
