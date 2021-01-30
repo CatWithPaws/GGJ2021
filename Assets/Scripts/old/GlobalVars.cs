@@ -59,7 +59,7 @@ public class GlobalVars : MonoBehaviour
 	public IEnumerator FadeOUT()
 	{
 		player = FindObjectOfType<Player>() as Player;
-		while (Faders[0].color.a != 0)
+		while (Faders[0].color.a > 0)
 		{
 			foreach (var image in Faders)
 			{
