@@ -7,7 +7,15 @@ public class DialogueInvoker : CanBeTriggeredByPlayer
     [SerializeField] public int stage;
     [SerializeField] private List<Dialogues> stageDialogues;
 
-    private void Update()
+
+     private void Start()
+     {
+         var cc = gameObject.AddComponent<CircleCollider2D>();
+         cc.radius = 1.2f;
+         cc.isTrigger = true;
+     }
+
+     private void Update()
     {
         if (isPlayer && Input.GetKeyDown(KeyCode.E))
         {

@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/_Scenes/Sample.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/_Scenes/InGame/StartScene.unity
     guid: 1b397797a2113054a89e547bcdf26646
@@ -12,15 +15,18 @@ EditorBuildSettings:
     path: Assets/_Scenes/InGame/House.unity
     guid: 95d6881e56dde66429d24236abaa64ff
   - enabled: 1
+    path: Assets/_Scenes/InGame/Fork.unity
+    guid: 2a08936e34b34ae46bea7e064b0f2aae
+  - enabled: 0
+    path: Assets/_Scenes/Test.unity
+    guid: ec61116090d661547bc4ee84deed4be6
+  - enabled: 1
+    path: Assets/_Scenes/InGame/Hunters.unity
+    guid: 7ad0762afc7c9d349a9fa79445e87380
+  - enabled: 1
     path: Assets/_Scenes/InGame/Mechanics.unity
     guid: 2d8b938a20b8b6146b9d74efa2313fb4
   - enabled: 1
     path: Assets/_Scenes/InGame/Wizards.unity
     guid: 54f70ad001008eb4d8e2467f67454663
-  - enabled: 1
-    path: Assets/_Scenes/InGame/Hunters.unity
-    guid: 7ad0762afc7c9d349a9fa79445e87380
-  - enabled: 1
-    path: Assets/_Scenes/InGame/Fork.unity
-    guid: 2a08936e34b34ae46bea7e064b0f2aae
   m_configObjects: {}
