@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 public class MainEngeniersQuest : MonoBehaviour
@@ -40,7 +41,8 @@ public class MainEngeniersQuest : MonoBehaviour
 
                 foreach (var l in FindObjectsOfType<LightScr>())
                 {
-                    StartCoroutine(Enable(l.gameObject));
+                    StartCoroutine(Enable(l.gameObject.GetComponent<Light2D>()));
+                    
                 }
                 break;
             case GameType.Music:
@@ -52,10 +54,10 @@ public class MainEngeniersQuest : MonoBehaviour
         }
     }
 
-    private IEnumerator Enable(GameObject ob)
+    private IEnumerator Enable(Light2D ob)
     {
-        yield return new WaitForSeconds(Random.Range(0.2f, 4f));
-        ob.SetActive(true);
+        yield return new WaitForSeconds(Random.Range(1f, 7f));
+        ob.enabled = true;
     }
     
 }
