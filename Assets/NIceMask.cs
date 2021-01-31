@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class NIceMask : MonoBehaviour
 {
-	private void OnTriggerEnter2D(Collider2D collision)
+	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Player"))
 		{
 			WorldBroadcast.MaskChanged.Publish(MaskType.Self);
-
+			StartCoroutine(LoadCredits());
 		}
 	}
 
