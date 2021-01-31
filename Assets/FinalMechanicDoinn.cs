@@ -22,7 +22,11 @@ public class FinalMechanicDoinn : CanBeTriggeredByPlayer
 
     private IEnumerator Do()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
+        foreach (var VARIABLE in FindObjectsOfType<DialogueScreen>())
+        {
+            Destroy(VARIABLE.gameObject);
+        }
         GlobalVars.i.DoneTech();
     }
 }
