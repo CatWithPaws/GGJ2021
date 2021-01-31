@@ -22,6 +22,8 @@ public class GlobalVars : MonoBehaviour
 
 	public  bool isPassingHuntersQuest, isPassingWizardQuest;
 
+	public int loreStage = 0;
+
 	public VoidFunc OnCanPassHuntersMiniGame;
 	public VoidFunc OnCanPassWizardMiniGame;
 	public VoidFunc OnWizardQuestDone;
@@ -128,13 +130,24 @@ public class GlobalVars : MonoBehaviour
 	{
 		isPassingHuntersQuest = false;
 		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
-		GlobalVars.i.FadeIn("House");
+		loreStage++;
+		GlobalVars.i.FadeIn("Memorr");
+		
 	}
 
 	public void DoneWizards()
 	{
 		isPassingWizardQuest = false;
 		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
-		GlobalVars.i.FadeIn("House");
+		loreStage++;
+
+		GlobalVars.i.FadeIn("Memmor");
+	}
+
+	public void DoneTech()
+	{
+		loreStage++;
+		GlobalVars.i.FadeIn("Memmor");
+		
 	}
 }
