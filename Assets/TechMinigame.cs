@@ -25,7 +25,8 @@ public class TechMinigame : MonoBehaviour
         while (points < pointsToHit && !didLoose)
         {
             yield return new WaitForSeconds(3.5f);
-            Instantiate(platformPrefab, transform);
+            GameObject asdasd = Instantiate(platformPrefab, transform);
+			asdasd.GetComponent<BulletInfoBehaviour>().minigame = this;
         }
     }
 

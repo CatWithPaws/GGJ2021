@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class BulletInfoBehaviour : MonoBehaviour
 {
-    public void DestroyThis()
+	public TechMinigame minigame;
+
+	public void DestroyThis()
     {
-       Destroy(gameObject); 
+       Destroy(gameObject);
+		minigame.didLoose = true;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
