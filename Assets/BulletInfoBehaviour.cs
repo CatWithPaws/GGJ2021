@@ -10,6 +10,7 @@ public class BulletInfoBehaviour : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.CompareTag("Line")) return;
         print("HitPoint");
         FindObjectOfType<TechMinigame>().points++;
         Destroy(gameObject);
