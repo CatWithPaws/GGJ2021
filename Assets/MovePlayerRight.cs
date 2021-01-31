@@ -6,11 +6,13 @@ public class MovePlayerRight : MonoBehaviour
 {
 	// Start is called before the first frame update
 
-	Transform[] SpawnPoint;
+	[SerializeField] Transform[] SpawnPoint;
+	[SerializeField] Transform lightTransform;
 	public AudioClip clip;
 	void Start()
     {
 		transform.position = SpawnPoint[GlobalVars.i.loreStage].position;
+		lightTransform.position = SpawnPoint[GlobalVars.i.loreStage].position;
 		GlobalVars.i.PlayBackgroundMusic(clip);
 	}
 

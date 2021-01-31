@@ -22,7 +22,7 @@ public class GlobalVars : MonoBehaviour
 
 	public  bool isPassingHuntersQuest, isPassingWizardQuest;
 	public bool canWizard = true, canHunters = true;
-	public int loreStage = 0;
+	public int loreStage = -1;
 
 	
 
@@ -144,7 +144,8 @@ public class GlobalVars : MonoBehaviour
 		canHunters = false;
 		currentMask = MaskType.Tiger;
 		WorldBroadcast.MaskChanged.Publish(MaskType.Tiger);
-		GlobalVars.i.FadeIn("Memorr");
+		print("Basdadasd");
+		StartCoroutine(FadeIn("Memorr"));
 		
 	}
 
@@ -156,7 +157,7 @@ public class GlobalVars : MonoBehaviour
 		loreStage++;
 		currentMask = MaskType.Owl;
 		WorldBroadcast.MaskChanged.Publish(MaskType.Owl);
-		GlobalVars.i.FadeIn("Memorr");
+		StartCoroutine(FadeIn("Memorr"));
 	}
 
 	public void DoneTech()
@@ -164,7 +165,7 @@ public class GlobalVars : MonoBehaviour
 		loreStage++;
 		currentMask = MaskType.Monkey;
 		WorldBroadcast.MaskChanged.Publish(MaskType.Monkey);
-		GlobalVars.i.FadeIn("Memorr");
+		StartCoroutine(FadeIn("Memorr"));
 		
 	}
 }
