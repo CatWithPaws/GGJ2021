@@ -7,7 +7,7 @@ public class MoveLightInMemories : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		if (GlobalVars.i.loreStage == 2) return;
+		if (GlobalVars.i.loreStage == 3) return;
 		StartCoroutine(MoveLight());
     }
 

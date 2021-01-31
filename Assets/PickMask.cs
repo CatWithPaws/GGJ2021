@@ -13,6 +13,7 @@ public class PickMask : MonoBehaviour
 		{
 			GlobalVars.i.currentMask = mask;
 			GlobalVars.i.OnWizardQuestDone();
+			Destroy(gameObject);
 		}
 	}
 }
