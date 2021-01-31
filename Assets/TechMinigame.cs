@@ -33,7 +33,7 @@ public class TechMinigame : MonoBehaviour
     {
         while (points < pointsToHit && !didLoose)
         {
-            lineAnimator.speed = speed;
+            //lineAnimator.speed = speed;
             var state = lineAnimator.GetCurrentAnimatorStateInfo(0);
             
             if (state.IsName("Idle"))
@@ -45,7 +45,7 @@ public class TechMinigame : MonoBehaviour
             }
             yield return null;
         }
-
+        print(didLoose);
         if (didLoose)
         {
             WorldBroadcast.GameEngLoose.Publish(gameObject);

@@ -10,5 +10,8 @@
         public static readonly GameEvent<GameObject> CollectionGameEnded = new GameEvent<GameObject>();
         public static readonly GameEvent<GameObject> GameEngWin = new GameEvent<GameObject>();
         public static readonly GameEvent<GameObject> GameEngLoose = new GameEvent<GameObject>();
+        public static readonly GameEvent<GameObject> SnowmanEventActivate = new GameEvent<GameObject>();
+        public static readonly GameEvent<GameObject> GeneratorEventActivate = new GameEvent<GameObject>();
+        public static readonly GameEvent<GameObject> MusicEventActivate = new GameEvent<GameObject>();
     }
 

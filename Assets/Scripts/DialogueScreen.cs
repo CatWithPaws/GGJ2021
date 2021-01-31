@@ -34,7 +34,7 @@ public class DialogueScreen : MonoBehaviour
                 text.text = textD;
                 break;
             }
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.025f);
         }
 
         text.text = textD;
