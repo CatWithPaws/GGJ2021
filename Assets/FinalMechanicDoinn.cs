@@ -14,7 +14,7 @@ public class FinalMechanicDoinn : CanBeTriggeredByPlayer
 
     void Update()
     {
-        if (isPlayer && Input.GetKey(KeyCode.E))
+        if (di.stage == 1 && isPlayer && Input.GetKey(KeyCode.E))
         {
             StartCoroutine(Do());
         }
@@ -23,6 +23,6 @@ public class FinalMechanicDoinn : CanBeTriggeredByPlayer
     private IEnumerator Do()
     {
         yield return new WaitForSeconds(5f);
-        
+        GlobalVars.i.DoneTech();
     }
 }
