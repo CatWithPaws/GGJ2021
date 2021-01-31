@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,11 @@ public class DialogueScreen : MonoBehaviour
     public TextMeshProUGUI text;
 
     public bool isFinished;
+
+    private void Start()
+    {
+        FindObjectOfType<Player>().SetControl(false);
+    }
 
     public void OnAppeared()
     {
@@ -38,7 +44,8 @@ public class DialogueScreen : MonoBehaviour
             yield return null;
         }
         print("Dialogue Finished");
-
+        
+        FindObjectOfType<Player>().SetControl(true);
         isFinished = true;
     }
     
