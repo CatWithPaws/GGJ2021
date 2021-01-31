@@ -18,8 +18,9 @@ public class PassWizardQuest : MonoBehaviour
 				{
 					a.SetActive(false);
 				}
-				portal.SetActive(false);
 				Mask.SetActive(true);
+				portal.SetActive(false);
+				
 			}
 		}
 	}

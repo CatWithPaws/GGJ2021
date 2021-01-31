@@ -147,7 +147,7 @@ public class GlobalVars : MonoBehaviour
 		currentMask = MaskType.Tiger;
 		WorldBroadcast.MaskChanged.Publish(MaskType.Tiger);
 		print("Basdadasd");
-		StartCoroutine(FadeIn("Memorr"));
+		StartCoroutine(FadeIn("Memorr " + loreStage.ToString()));
 		
 	}
 
@@ -159,15 +159,17 @@ public class GlobalVars : MonoBehaviour
 		loreStage++;
 		currentMask = MaskType.Owl;
 		WorldBroadcast.MaskChanged.Publish(MaskType.Owl);
-		StartCoroutine(FadeIn("Memorr"));
+		StartCoroutine(FadeIn("Memorr " + loreStage.ToString()));
 	}
+
 
 	public void DoneTech()
 	{
+		
 		loreStage++;
 		currentMask = MaskType.Monkey;
 		WorldBroadcast.MaskChanged.Publish(MaskType.Monkey);
-		StartCoroutine(FadeIn("Memorr"));
+		StartCoroutine(FadeIn("Memorr " + loreStage.ToString()));
 		
 	}
 }

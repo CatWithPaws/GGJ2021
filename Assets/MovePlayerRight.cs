@@ -22,7 +22,7 @@ public class MovePlayerRight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (GlobalVars.i.loreStage != 3) return;
+		
 		if (Input.GetKey(KeyCode.D))
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(4, 0);

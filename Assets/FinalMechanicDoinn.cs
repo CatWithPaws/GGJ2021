@@ -14,7 +14,7 @@ public class FinalMechanicDoinn : CanBeTriggeredByPlayer
 
     void Update()
     {
-        if (di.stage == 1 && isPlayer && Input.GetKey(KeyCode.E))
+        if (di.stage == 1 && isPlayer && Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(Do());
         }
