@@ -26,7 +26,8 @@ public class MaskManager : MonoBehaviour
 
     private void Start()
     {
-        SetSprite(_mask);
+        SetSprite(GlobalVars.i.currentMask);
+
     }
 
     private void OnMaskChanged(MaskType mt)

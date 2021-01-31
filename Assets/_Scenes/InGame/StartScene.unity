@@ -755,6 +755,7 @@ MonoBehaviour:
   canHunters: 1
   loreStage: 0
   clip: {fileID: 8300000, guid: 29fde5834e509394a966d91d49b2c481, type: 3}
+  currentMask: 1
 --- !u!114 &1417951012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1041,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5944106251836059486, guid: 33e21098a9c39864abb4499f5a091780, type: 2}
   m_audioClip: {fileID: 8300000, guid: 29fde5834e509394a966d91d49b2c481, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

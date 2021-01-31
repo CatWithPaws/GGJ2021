@@ -31,6 +31,8 @@ public class GlobalVars : MonoBehaviour
 	public VoidFunc OnWizardQuestDone;
 	public VoidFunc OnHuntersQuestDone;
 	public AudioClip clip;
+	public MaskType currentMask = MaskType.Default;
+
 	private void Start()
 	{
 		i = this;
@@ -140,6 +142,8 @@ public class GlobalVars : MonoBehaviour
 		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
 		loreStage++;
 		canHunters = false;
+		currentMask = MaskType.Tiger;
+		WorldBroadcast.MaskChanged.Publish(MaskType.Tiger);
 		GlobalVars.i.FadeIn("Memorr");
 		
 	}
@@ -150,14 +154,17 @@ public class GlobalVars : MonoBehaviour
 		canWizard = false;
 		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
 		loreStage++;
-
-		GlobalVars.i.FadeIn("Memmor");
+		currentMask = MaskType.Owl;
+		WorldBroadcast.MaskChanged.Publish(MaskType.Owl);
+		GlobalVars.i.FadeIn("Memorr");
 	}
 
 	public void DoneTech()
 	{
 		loreStage++;
-		GlobalVars.i.FadeIn("Memmor");
+		currentMask = MaskType.Monkey;
+		WorldBroadcast.MaskChanged.Publish(MaskType.Monkey);
+		GlobalVars.i.FadeIn("Memorr");
 		
 	}
 }
