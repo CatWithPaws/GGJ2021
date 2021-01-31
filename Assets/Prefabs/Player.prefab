@@ -176,7 +176,7 @@ MonoBehaviour:
   owlSprite: {fileID: 2106813266585722662, guid: e5c4fc2f587fe154f936bbba59e5fda2, type: 3}
   monkeySprite: {fileID: -812307006882734072, guid: e5c4fc2f587fe154f936bbba59e5fda2, type: 3}
   defaultSprite: {fileID: 21300000, guid: 0228f7bfed2477941860fa4afbc6cde9, type: 3}
-  selfSprite: {fileID: -5323634439949447954, guid: e5c4fc2f587fe154f936bbba59e5fda2, type: 3}
+  selfSprite: {fileID: 21300000, guid: f23a5ec0fae76c249873b204f8056a56, type: 3}
   tigerSprite: {fileID: 8029930963884688710, guid: e5c4fc2f587fe154f936bbba59e5fda2, type: 3}
 --- !u!212 &289298677511783439
 SpriteRenderer:
@@ -442,4 +442,4 @@ MonoBehaviour:
   - {x: -0.5095067, y: 0.07319665, z: 0}
   m_ShapePathHash: -75247228
   m_Mesh: {fileID: 0}
-  m_InstanceId: -84546
+  m_InstanceId: 43014

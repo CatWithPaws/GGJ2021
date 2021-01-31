@@ -8,7 +8,15 @@ public class NIceMask : MonoBehaviour
 	{
 		if (collision.CompareTag("Player"))
 		{
-			GlobalVars.i.FadeIn("Credits");
+			WorldBroadcast.MaskChanged.Publish(MaskType.Self);
+
 		}
 	}
+
+	IEnumerator LoadCredits()
+	{
+		yield return new WaitForSeconds(3);
+		StartCoroutine(GlobalVars.i.FadeIn("Credits"));
+	}
+
 }

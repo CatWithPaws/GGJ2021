@@ -25,7 +25,7 @@ public class MovePlayerRight : MonoBehaviour
 		if (GlobalVars.i.loreStage != 3) return;
 		if (Input.GetKey(KeyCode.D))
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(4, 0);
 		}
 		else
 		{
