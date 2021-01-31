@@ -61,7 +61,7 @@ public class TechMinigame : MonoBehaviour
     {
         foreach (var b in FindObjectsOfType<BulletInfoBehaviour>())
         {
-            if (b.transform.position.x < 4.5f && b.transform.position.x > -4.5f)
+            if (b.transform.localPosition.x < 10 && b.transform.localPosition.x > -10)
             {
                 points++;
                 print("HitPoint");
