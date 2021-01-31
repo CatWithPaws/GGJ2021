@@ -42,6 +42,7 @@ public class TechMinigame : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     lineAnimator.Play("Move");
+                    Invoke(nameof(CheckBullets), 0.3f);
                 }
             }
             yield return null;
@@ -54,5 +55,18 @@ public class TechMinigame : MonoBehaviour
 
         FindObjectOfType<Player>().SetControl(true);
         Destroy(gameObject);
+    }
+
+    private void CheckBullets()
+    {
+        foreach (var b in FindObjectsOfType<BulletInfoBehaviour>())
+        {
+            if (b.transform.position.x < 200 && b.transform.position.x > -200)
+            {
+                points++;
+                print("HitPoint");
+                Destroy(b.gameObject);
+            }
+        }
     }
 }
