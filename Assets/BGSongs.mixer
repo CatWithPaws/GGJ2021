@@ -100,6 +100,12 @@ AudioMixerController:
     - ab4ccd6cde092344482609db5bc2d867
     - ec9ffb0a81da93f43bcb4bd4eb3b0f06
     name: View
+  - guids:
+    - 273abb54f0ad1db4286b542f296cf8a2
+    - 5d8c579c31d83d549bf0016f8552530b
+    - ab4ccd6cde092344482609db5bc2d867
+    - ec9ffb0a81da93f43bcb4bd4eb3b0f06
+    name: View - Copy
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
