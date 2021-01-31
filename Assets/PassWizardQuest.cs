@@ -6,7 +6,7 @@ public class PassWizardQuest : MonoBehaviour
 {
 	[SerializeField] GameObject portal;
 	[SerializeField] GameObject[] particles;
-
+	[SerializeField] GameObject Mask;
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		
@@ -19,9 +19,7 @@ public class PassWizardQuest : MonoBehaviour
 					a.SetActive(false);
 				}
 				portal.SetActive(false);
-				GlobalVars.i.OnWizardQuestDone();
-
-				
+				Mask.SetActive(true);
 			}
 		}
 	}

@@ -14,7 +14,7 @@ public class aasdasdasdad : MonoBehaviour
 	IEnumerator PlaySong()
 	{
 		yield return new WaitForEndOfFrame();
-		GlobalVars.i.BackroundMusic.Stop();
+		
 		GlobalVars.i.PlayBackgroundMusic(clip);
 	}
 	
