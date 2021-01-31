@@ -11,17 +11,21 @@ public class MovePlayerRight : MonoBehaviour
 	public AudioClip clip;
 	void Start()
     {
-		transform.position = SpawnPoint[GlobalVars.i.loreStage].position;
-		lightTransform.position = SpawnPoint[GlobalVars.i.loreStage].position;
+		Vector3 lightPos = SpawnPoint[GlobalVars.i.loreStage - 1].position;
+		transform.position = new Vector3(lightPos.x, lightPos.y, transform.position.z) ;
+		
+		lightPos.z = lightTransform.position.z;
+		lightTransform.position = lightPos;
 		GlobalVars.i.PlayBackgroundMusic(clip);
 	}
 
     // Update is called once per frame
     void Update()
     {
+		if (GlobalVars.i.loreStage != 3) return;
 		if (Input.GetKey(KeyCode.D))
 		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(250, 0);
+			GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
 		}
 		else
 		{
