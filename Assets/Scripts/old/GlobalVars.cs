@@ -98,19 +98,17 @@ public class GlobalVars : MonoBehaviour
 
 	public void PlayOneShotEffect(AudioClip clip)
 	{
-		OneShootEffectAudio.PlayOneShot(clip);
+		OneShootEffectAudio.clip = clip;
 	}
 
 	public void PlayOneShotMusic(AudioClip clip)
 	{
-		OneShootMusic.PlayOneShot(clip);
+		OneShootMusic.clip = clip;
 	}
 
 	public void PlayBackgroundMusic(AudioClip clip)
 	{
-		print("asdadadasd");
 		BackroundMusic.clip = clip;
-		BackroundMusic.PlayOneShot(clip);
 	}
 
 	public  void CheckIsQuestCompleted(Sprite asdasd)
