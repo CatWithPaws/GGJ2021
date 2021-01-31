@@ -109,7 +109,6 @@ public class GlobalVars : MonoBehaviour
 	public void PlayBackgroundMusic(AudioClip clip)
 	{
 		print("asdadadasd");
-		BackroundMusic.clip = clip;
 		BackroundMusic.PlayOneShot(clip);
 	}
 
