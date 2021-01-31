@@ -24,6 +24,8 @@ public class GlobalVars : MonoBehaviour
 	public bool canWizard = true, canHunters = true;
 	public int loreStage = 0;
 
+	
+
 	public VoidFunc OnCanPassHuntersMiniGame;
 	public VoidFunc OnCanPassWizardMiniGame;
 	public VoidFunc OnWizardQuestDone;
