@@ -11,8 +11,11 @@ public class MovePlayerRight : MonoBehaviour
 	public AudioClip clip;
 	void Start()
     {
-		transform.position = SpawnPoint[GlobalVars.i.loreStage].position;
-		lightTransform.position = SpawnPoint[GlobalVars.i.loreStage].position;
+		Vector3 lightPos = SpawnPoint[GlobalVars.i.loreStage - 1].position;
+		transform.position = new Vector3(lightPos.x, lightPos.y, transform.position.z) ;
+		
+		lightPos.z = lightTransform.position.z;
+		lightTransform.position = lightPos;
 		GlobalVars.i.PlayBackgroundMusic(clip);
 	}
 

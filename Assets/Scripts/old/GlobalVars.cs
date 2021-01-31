@@ -22,7 +22,7 @@ public class GlobalVars : MonoBehaviour
 
 	public  bool isPassingHuntersQuest, isPassingWizardQuest;
 	public bool canWizard = true, canHunters = true;
-	public int loreStage = -1;
+	public int loreStage = 0;
 
 	
 
@@ -107,14 +107,16 @@ public class GlobalVars : MonoBehaviour
 	public void PlayOneShotMusic(AudioClip clip)
 	{
 		OneShootMusic.Stop();
-		OneShootMusic.PlayOneShot(clip);
+		OneShootMusic.clip = clip;
+		OneShootMusic.Play();
 	}
 
 	public void PlayBackgroundMusic(AudioClip clip)
 	{
 		print("asdadadasd");
 		GlobalVars.i.BackroundMusic.Stop();
-		BackroundMusic.PlayOneShot(clip);
+		BackroundMusic.clip = clip;
+		BackroundMusic.Play();
 	}
 
 	public  void CheckIsQuestCompleted(Sprite asdasd)

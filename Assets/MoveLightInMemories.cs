@@ -14,18 +14,18 @@ public class MoveLightInMemories : MonoBehaviour
 	IEnumerator MoveLight()
 	{
 		float timer = 0f;
-		while (timer < 4f)
+		while (timer < 3f)
 		{
 			timer += Time.deltaTime;
 			yield return new WaitForEndOfFrame();
 		}
 		timer = 0;
-		while (timer < 4f)
+		while (timer < 2f)
 		{
 			timer += Time.deltaTime;
 			transform.Translate(-4f * Time.deltaTime, 0, 0);
 			yield return new WaitForEndOfFrame();
 		}
-		GlobalVars.i.FadeIn("House");
+		StartCoroutine(GlobalVars.i.FadeIn("House"));
 	}
 }
