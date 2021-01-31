@@ -21,19 +21,21 @@ public class GlobalVars : MonoBehaviour
 	public AudioSource OneShootEffectAudio,OneShootMusic,BackroundMusic;
 
 	public  bool isPassingHuntersQuest, isPassingWizardQuest;
-
+	public bool canWizard = true, canHunters = true;
 	public int loreStage = 0;
 
 	public VoidFunc OnCanPassHuntersMiniGame;
 	public VoidFunc OnCanPassWizardMiniGame;
 	public VoidFunc OnWizardQuestDone;
 	public VoidFunc OnHuntersQuestDone;
+	public AudioClip clip;
 	private void Start()
 	{
 		i = this;
 		DontDestroyOnLoad(gameObject);
 		SceneManager.sceneLoaded += FadeOut;
 		WorldBroadcast.ItemCollected.Subscribe(CheckIsQuestCompleted);
+		PlayBackgroundMusic(clip);
 		OnHuntersQuestDone += DoneHunters;
 		OnWizardQuestDone += DoneWizards;
 		
@@ -131,6 +133,7 @@ public class GlobalVars : MonoBehaviour
 		isPassingHuntersQuest = false;
 		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
 		loreStage++;
+		canHunters = false;
 		GlobalVars.i.FadeIn("Memorr");
 		
 	}
@@ -138,6 +141,7 @@ public class GlobalVars : MonoBehaviour
 	public void DoneWizards()
 	{
 		isPassingWizardQuest = false;
+		canWizard = false;
 		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
 		loreStage++;
 

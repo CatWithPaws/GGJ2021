@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class StartWizardQuest : MonoBehaviour
 {
+	public AudioClip clip;
+
     void Start()
     {
-		if (GlobalVars.i.isPassingWizardQuest) Destroy(gameObject); 
+		GlobalVars.i.PlayBackgroundMusic(clip);
+		if (GlobalVars.i.isPassingWizardQuest || !GlobalVars.i.canWizard) Destroy(gameObject); 
 		GlobalVars.i.isPassingWizardQuest = true;
 		
 	}

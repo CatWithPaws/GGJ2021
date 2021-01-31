@@ -7,11 +7,12 @@ public class MovePlayerRight : MonoBehaviour
 	// Start is called before the first frame update
 
 	Transform[] SpawnPoint;
-
+	public AudioClip clip;
 	void Start()
     {
 		transform.position = SpawnPoint[GlobalVars.i.loreStage].position;
-    }
+		GlobalVars.i.PlayBackgroundMusic(clip);
+	}
 
     // Update is called once per frame
     void Update()

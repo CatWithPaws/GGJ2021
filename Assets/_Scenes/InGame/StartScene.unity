@@ -749,6 +749,12 @@ MonoBehaviour:
   OneShootEffectAudio: {fileID: 1417951016}
   OneShootMusic: {fileID: 1417951017}
   BackroundMusic: {fileID: 1417951018}
+  isPassingHuntersQuest: 0
+  isPassingWizardQuest: 0
+  canWizard: 1
+  canHunters: 1
+  loreStage: 0
+  clip: {fileID: 8300000, guid: 29fde5834e509394a966d91d49b2c481, type: 3}
 --- !u!114 &1417951012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,7 +1212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemUIPrefab: {fileID: 193960554385050023, guid: 1d8e318d9169ad54f9cc9488f52697be, type: 3}
-  itemList: []
   Items: {fileID: 574790442}
 --- !u!1 &1717660589
 GameObject:
