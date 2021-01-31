@@ -8,7 +8,14 @@ public class aasdasdasdad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		GlobalVars.i.PlayBackgroundMusic(clip);
+		StartCoroutine(PlaySong());
     }
+
+	IEnumerator PlaySong()
+	{
+		yield return new WaitForEndOfFrame();
+		GlobalVars.i.BackroundMusic.Stop();
+		GlobalVars.i.PlayBackgroundMusic(clip);
+	}
 	
 }
