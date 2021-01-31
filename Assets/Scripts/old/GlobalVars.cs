@@ -25,12 +25,15 @@ public class GlobalVars : MonoBehaviour
 	public VoidFunc OnCanPassHuntersMiniGame;
 	public VoidFunc OnCanPassWizardMiniGame;
 	public VoidFunc OnWizardQuestDone;
+	public VoidFunc OnHuntersQuestDone;
 	private void Start()
 	{
 		i = this;
 		DontDestroyOnLoad(gameObject);
 		SceneManager.sceneLoaded += FadeOut;
 		WorldBroadcast.ItemCollected.Subscribe(CheckIsQuestCompleted);
+		OnHuntersQuestDone += DoneHunters;
+		OnWizardQuestDone += DoneWizards;
 		
 	}
 
@@ -119,5 +122,19 @@ public class GlobalVars : MonoBehaviour
 				OnCanPassWizardMiniGame();
 			}
 		}
+	}
+
+	public void DoneHunters()
+	{
+		isPassingHuntersQuest = false;
+		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
+		GlobalVars.i.FadeIn("House");
+	}
+
+	public void DoneWizards()
+	{
+		isPassingWizardQuest = false;
+		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
+		GlobalVars.i.FadeIn("House");
 	}
 }

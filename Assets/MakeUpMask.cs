@@ -57,7 +57,7 @@ public class MakeUpMask : MonoBehaviour
 
 	void GamePassed()
 	{
-		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
+		GlobalVars.i.OnHuntersQuestDone();
 		MiniGameCanvas.SetActive(false);
 	}
 

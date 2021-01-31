@@ -11,6 +11,7 @@ public class ChangeStages : MonoBehaviour
 
 	private void ChangeStage()
 	{
+		print("asdasdasd");
 		DialogueInvoker dialogueInvoker = gameObject.GetComponent<DialogueInvoker>();
 
 		dialogueInvoker.stage = 1;
