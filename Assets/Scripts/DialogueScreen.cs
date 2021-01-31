@@ -28,7 +28,7 @@ public class DialogueScreen : MonoBehaviour
         for (int i = 0; i < textD.Length; i++)
         {
             print(text);
-            text.text = textD.Trim().Remove(i);
+            text.text = textD.Remove(i);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 text.text = textD;
