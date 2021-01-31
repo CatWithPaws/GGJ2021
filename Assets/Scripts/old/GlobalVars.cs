@@ -33,8 +33,11 @@ public class GlobalVars : MonoBehaviour
 		WorldBroadcast.ItemCollected.Subscribe(CheckIsQuestCompleted);
 		
 	}
-	
 
+	private void Update()
+	{
+		//print(isPassingWizardQuest);
+	}
 	public void SetFader(GameObject fader)
 	{
 		Faders = fader.GetComponents<Image>();
@@ -59,7 +62,7 @@ public class GlobalVars : MonoBehaviour
 		{
 			foreach(var image in Faders)
 			{
-				image.color += new Color(0, 0, 0, Time.deltaTime/1.5f);
+				image.color += new Color(0, 0, 0, Time.deltaTime);
 			}
 			yield return new WaitForEndOfFrame();
 		}
@@ -72,7 +75,7 @@ public class GlobalVars : MonoBehaviour
 		{
 			foreach (var image in Faders)
 			{
-				image.color -= new Color(0, 0, 0, Time.deltaTime / 1.5f);
+				image.color -= new Color(0, 0, 0, Time.deltaTime);
 			}
 			yield return new WaitForEndOfFrame();
 		}
@@ -112,6 +115,7 @@ public class GlobalVars : MonoBehaviour
 		{
 			if (InventoryUI.itemList.Count == 5)
 			{
+				print("Wizard");
 				OnCanPassWizardMiniGame();
 			}
 		}

@@ -10,8 +10,8 @@ public class PassWizardQuest : MonoBehaviour
 	{
 		
 		{
-			print(WizardQuestHandler.CanPassWizardQuest);
-			if (Input.GetKey(KeyCode.E) && WizardQuestHandler.CanPassWizardQuest)
+			//print(WizardQuestHandler.CanPassWizardQuest);
+			if (WizardQuestHandler.CanPassWizardQuest)
 			{
 				portal.SetActive(false);
 			}
