@@ -11,10 +11,23 @@ public class MakeUpMask : MonoBehaviour
 
 	[SerializeField] GameObject MiniGameCanvas;
 
+
+	private void Awake()
+	{
+		GlobalVars.i.OnCanPassHuntersMiniGame += StartMiniGame;
+	}
+
+	private void StartMiniGame()
+	{
+		MiniGameCanvas.SetActive(true);
+	}
+
 	public void MovePartPicture(RectTransform rectTransform)
 	{
 		rectTransform.position = Input.mousePosition;
 	}
+
+	
 
 	public void ComparePicturesParts(ImageType movableImage)
 	{
@@ -44,6 +57,7 @@ public class MakeUpMask : MonoBehaviour
 
 	void GamePassed()
 	{
+		WorldBroadcast.CollectionGameEnded.Publish(gameObject);
 		MiniGameCanvas.SetActive(false);
 	}
 

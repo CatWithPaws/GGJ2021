@@ -19,7 +19,7 @@ public class DialogueScreen : MonoBehaviour
     {
         var textD = dialogue.message;
         print("Started");
-        for (int i = 0; i < textD.Length; i++)
+        for (int i = 0; i < textD.Length-1; i++)
         {
             print(text);
             text.text = textD.Trim().Remove(i);

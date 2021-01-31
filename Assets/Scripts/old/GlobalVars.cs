@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GlobalVars : MonoBehaviour
 {
+	public delegate void VoidFunc();
+
 	public static GlobalVars i;
 
 	public Image[] QuestItems;
@@ -18,11 +20,17 @@ public class GlobalVars : MonoBehaviour
 
 	public AudioSource OneShootEffectAudio,OneShootMusic,BackroundMusic;
 
+	public  bool isPassingHuntersQuest, isPassingWizardQuest;
+
+	public VoidFunc OnCanPassHuntersMiniGame;
+	public VoidFunc OnCanPassWizardMiniGame;
+	public VoidFunc OnWizardQuestDone;
 	private void Start()
 	{
 		i = this;
 		DontDestroyOnLoad(gameObject);
 		SceneManager.sceneLoaded += FadeOut;
+		WorldBroadcast.ItemCollected.Subscribe(CheckIsQuestCompleted);
 		
 	}
 	
@@ -51,7 +59,7 @@ public class GlobalVars : MonoBehaviour
 		{
 			foreach(var image in Faders)
 			{
-				image.color += new Color(0, 0, 0, Time.deltaTime/2);
+				image.color += new Color(0, 0, 0, Time.deltaTime/1.5f);
 			}
 			yield return new WaitForEndOfFrame();
 		}
@@ -64,7 +72,7 @@ public class GlobalVars : MonoBehaviour
 		{
 			foreach (var image in Faders)
 			{
-				image.color -= new Color(0, 0, 0, Time.deltaTime/2);
+				image.color -= new Color(0, 0, 0, Time.deltaTime / 1.5f);
 			}
 			yield return new WaitForEndOfFrame();
 		}
@@ -91,4 +99,21 @@ public class GlobalVars : MonoBehaviour
 		BackroundMusic.clip = clip;
 	}
 
+	public  void CheckIsQuestCompleted(Sprite asdasd)
+	{
+		if (isPassingHuntersQuest)
+		{
+			if (InventoryUI.itemList.Count == 4)
+			{
+				OnCanPassHuntersMiniGame();
+			}
+		}
+		else if (isPassingWizardQuest)
+		{
+			if (InventoryUI.itemList.Count == 5)
+			{
+				OnCanPassWizardMiniGame();
+			}
+		}
+	}
 }

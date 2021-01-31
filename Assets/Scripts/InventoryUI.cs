@@ -5,8 +5,9 @@ using UnityEngine.UI;
 public class InventoryUI : MonoBehaviour
 {
     public GameObject itemUIPrefab;
-    public List<GameObject> itemList = new List<GameObject>();
+    public static List<GameObject> itemList = new List<GameObject>();
     public Transform Items;
+
 
     private float offset = 120;
     void Awake()

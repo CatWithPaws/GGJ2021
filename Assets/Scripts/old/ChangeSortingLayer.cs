@@ -7,12 +7,17 @@ public class ChangeSortingLayer : MonoBehaviour
 {
 	public SpriteRenderer player;
 	public SpriteRenderer mask;
+	private void Start()
+	{
+		player.sortingOrder = 10;
+		mask.sortingOrder = 11;
+	}
 	private void OnTriggerStay2D(Collider2D collision)
 	{
 		if(collision.gameObject.layer == LayerMask.NameToLayer("NeedToCnahngeSortingLayer"))
 		{
-			mask.sortingOrder = -1;
-			player.sortingOrder = -2;
+			mask.sortingOrder = -10;
+			player.sortingOrder = -11;
 		}
 	}
 
@@ -20,8 +25,8 @@ public class ChangeSortingLayer : MonoBehaviour
 	{
 		if(collision.gameObject.layer == LayerMask.NameToLayer("NeedToCnahngeSortingLayer"))
 		{
-			player.sortingOrder = 1;
-			mask.sortingOrder = 2;
+			player.sortingOrder = 10;
+			mask.sortingOrder = 11;
 
 		}
 	}
