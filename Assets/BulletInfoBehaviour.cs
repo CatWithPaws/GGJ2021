@@ -7,8 +7,9 @@ public class BulletInfoBehaviour : MonoBehaviour
 
 	public void DestroyThis()
     {
-       Destroy(gameObject);
 		minigame.didLoose = true;
+		Destroy(gameObject);
+	
     }
 
     public void OnTriggerEnter2D(Collider2D other)
